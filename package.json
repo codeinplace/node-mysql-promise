@@ -2,15 +2,18 @@
   "name": "@codeinplace/node-mysql",
   "version": "1.0.2",
   "main": "dist/index.js",
-  "license": "MIT",
+  "repository": "https://github.com/codeinplace/node-mysql-promise",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "nodemon src/index.ts",
     "test": "jest --detectOpenHandles"
   },
   "dependencies": {
     "faker": "^4.1.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.1.0"
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
