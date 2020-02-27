@@ -1,6 +1,6 @@
 {
   "name": "@codeinplace/node-mysql",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "repository": "https://github.com/codeinplace/node-mysql-promise",
   "license": "UNLICENSED",
@@ -12,7 +12,6 @@
     "test": "jest --detectOpenHandles"
   },
   "dependencies": {
-    "faker": "^4.1.0",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
