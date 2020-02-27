@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "outDir": "dist",
+        "moduleResolution": "Node",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./@types"
+        ]
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

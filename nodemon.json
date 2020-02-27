@@ -1,0 +1,16 @@
+{
+    "watch": [
+        "src"
+    ],
+    "ignore": [
+        ".git",
+        "node_modules/**/node_modules"
+    ],
+    "execMap": {
+        "ts": "node --inspect=0.0.0.0:9227 --require ts-node/register/transpile-only src/index.ts"
+    },
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ext": "ts,js,json"
+}
