@@ -12,7 +12,7 @@
     "prebuild": "rimraf dist",
     "prepublishOnly": "yarn test && yarn build",
     "dev": "nodemon src/index.ts",
-    "test": "yarn build && jest --detectOpenHandles",
+    "test": "yarn build && jest --forceExit",
     "build": "tsc"
   },
   "dependencies": {
