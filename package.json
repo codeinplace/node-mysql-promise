@@ -9,6 +9,8 @@
     "access": "public"
   },
   "scripts": {
+    "prebuild": "rimraf dist",
+    "prepublishOnly": "yarn test && yarn build",
     "dev": "nodemon src/index.ts",
     "test": "yarn build && jest --detectOpenHandles",
     "build": "tsc"
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@types/jest": "^25.1.3",
     "@types/mysql": "^2.15.9",
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "rimraf": "^3.0.2"
   }
 }
