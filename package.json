@@ -1,5 +1,5 @@
 {
-  "name": "@codeinplace/node-mysql",
+  "name": "@codeinplace/node-mysql2",
   "version": "1.0.1",
   "main": "dist/index.js",
   "repository": "https://github.com/codeinplace/node-mysql-promise",
