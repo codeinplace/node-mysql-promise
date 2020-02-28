@@ -9,7 +9,8 @@
   },
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "test": "jest --detectOpenHandles"
+    "test": "yarn build && jest --detectOpenHandles",
+    "build": "tsc"
   },
   "dependencies": {
     "mysql": "^2.18.1"
