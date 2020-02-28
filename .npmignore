@@ -1,6 +1,2 @@
 /node_modules
 /src
-/test
-.gitignore
-.npmignore
-/schema.sql

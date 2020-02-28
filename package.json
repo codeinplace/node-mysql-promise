@@ -2,6 +2,7 @@
   "name": "@codeinplace/node-mysql",
   "version": "1.0.1",
   "main": "dist/index.js",
+  "author": "CodeInPlace <admin@codeinplace.com>",
   "repository": "https://github.com/codeinplace/node-mysql-promise",
   "license": "UNLICENSED",
   "publishConfig": {
@@ -13,8 +14,11 @@
     "build": "tsc"
   },
   "dependencies": {
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
-
+    "@types/jest": "^25.1.3",
+    "@types/mysql": "^2.15.9",
+    "jest": "^25.1.0"
   }
 }
