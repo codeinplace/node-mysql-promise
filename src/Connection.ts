@@ -11,7 +11,11 @@ export class Connection {
     query<T>(sql: string, values: Array<any>): Promise<T[]> {
         return new Promise((resolve, reject) => {
             this.conn.query(sql, values, (err, results) => {
-                if (err) return reject(err);
+                if (err) {
+                    if (this.conn) this.release();
+                    return reject(err);
+                }
+                this.release();
                 resolve(results);
             });
         });
@@ -20,7 +24,10 @@ export class Connection {
     beginTransaction(): Promise<void> {
         return new Promise((resolve, reject) => {
             this.conn.beginTransaction((err) => {
-                if (err) return reject(err);
+                if (err) {
+                    if (this.conn) this.release();
+                    return reject(err);
+                }
                 resolve();
             });
         });
@@ -29,7 +36,11 @@ export class Connection {
     commit(): Promise<void> {
         return new Promise((resolve, reject) => {
             this.conn.commit((err) => {
-                if (err) return reject(err);
+                if (err) {
+                    if (this.conn) this.release();
+                    return reject(err);
+                }
+                this.release();
                 resolve();
             });
         });
@@ -38,7 +49,11 @@ export class Connection {
     rollback(): Promise<void> {
         return new Promise((resolve, reject) => {
             this.conn.rollback((err) => {
-                if (err) return reject(err);
+                if (err) {
+                    if (this.conn) this.release();
+                    return reject(err);
+                }
+                this.release();
                 resolve();
             });
         });

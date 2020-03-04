@@ -15,9 +15,13 @@ export class PoolConnection {
         return this;
     }
 
-    async query<T>(sql: string, values: any): Promise<T[]> {
-        const conn = await this.getConnection();
-        return conn.query<T>(sql, values);
+    query<T>(sql: string, values: any): Promise<T[]> {
+        return new Promise((resolve, reject) => {
+            this.pool.query(sql, values, (err, results) => {
+                if (err) return reject(err);
+                resolve(results);
+            });
+        });
     }
 
     getConnection(): Promise<Connection> {
