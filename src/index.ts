@@ -1,8 +1,8 @@
-import { ConnectionConfig, escapeId, escape, format, raw } from 'mysql';
-import { MySQLPromise } from './MySQLPromise';
+import { PoolConfig, escapeId, escape, format, raw } from 'mysql';
+import { PoolConnection } from './PoolConnection';
 
-export function createPool(config: ConnectionConfig) {
-    return new MySQLPromise().createPool(config)
+export function createPool(config: PoolConfig) {
+    return new PoolConnection().createPool(config)
 }
 
-export { escapeId, escape, format, raw };
+export { PoolConnection, PoolConfig, escapeId, escape, format, raw };
