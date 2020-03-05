@@ -1,14 +1,13 @@
-import { PoolConnection } from 'mysql';
+import { PoolConnection } from "mysql";
 
 export class Connection {
-
-    constructor(private conn: PoolConnection) { }
+    constructor(private conn: PoolConnection) {}
 
     release() {
         return this.conn.release();
     }
 
-    query<T>(sql: string, values: Array<any>): Promise<T[]> {
+    query<T extends any>(sql: string, values: any = []): Promise<T[] | any> {
         return new Promise((resolve, reject) => {
             this.conn.query(sql, values, (err, results) => {
                 if (err) {

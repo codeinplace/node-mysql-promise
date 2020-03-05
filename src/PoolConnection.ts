@@ -15,7 +15,7 @@ export class PoolConnection {
         return this;
     }
 
-    query<T>(sql: string, values: any): Promise<T[]> {
+    query<T extends any>(sql: string, values: any = []): Promise<T[] | any> {
         return new Promise((resolve, reject) => {
             this.pool.query(sql, values, (err, results) => {
                 if (err) return reject(err);
@@ -26,10 +26,12 @@ export class PoolConnection {
 
     getConnection(): Promise<Connection> {
         return new Promise((resolve, reject) => {
-            this.pool.getConnection((err: MysqlError, conn: MysqlPoolConnection) => {
-                if (err) return reject(err);
-                resolve(new Connection(conn));
-            });
+            this.pool.getConnection(
+                (err: MysqlError, conn: MysqlPoolConnection) => {
+                    if (err) return reject(err);
+                    resolve(new Connection(conn));
+                }
+            );
         });
     }
 }
